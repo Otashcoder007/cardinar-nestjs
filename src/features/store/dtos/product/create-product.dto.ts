@@ -9,7 +9,7 @@ import {
   Length,
   Min,
 } from 'class-validator';
-import { Status } from '../../../core/enums';
+import { Status } from '../../../../core/enums';
 
 export class CreateProductDto {
   @Type(() => Number)

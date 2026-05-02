@@ -7,7 +7,7 @@ import {
   Length,
   Min,
 } from 'class-validator';
-import { Category, Parts } from '../../../core/enums';
+import { Category, Parts } from '../../../../core/enums';
 
 export class CreatePartDto {
   @IsEnum(Category)

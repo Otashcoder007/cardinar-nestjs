@@ -1,5 +1,5 @@
 import { IsEnum, IsString, Length } from 'class-validator';
-import { Category } from '../../../core/enums';
+import { Category } from '../../../../core/enums';
 
 export class CreateCustomModelDto {
   @IsEnum(Category)

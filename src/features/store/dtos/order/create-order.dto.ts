@@ -9,7 +9,7 @@ import {
   Length,
   Min,
 } from 'class-validator';
-import { OrderStatus, PaymentMethod } from '../../../core/enums';
+import { OrderStatus, PaymentMethod } from '../../../../core/enums';
 
 export class CreateOrderDto {
   @Type(() => Number)

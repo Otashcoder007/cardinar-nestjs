@@ -7,7 +7,7 @@ import {
   IsString,
   Length,
 } from 'class-validator';
-import { BranchType } from '../../../core/enums';
+import { BranchType } from '../../../../core/enums';
 
 export class CreateBranchDto {
   @IsString()

@@ -9,7 +9,7 @@ import {
   Length,
   Min,
 } from 'class-validator';
-import { Category } from '../../../core/enums';
+import { Category } from '../../../../core/enums';
 
 export class CreateCustomProductDto {
   @IsString()
