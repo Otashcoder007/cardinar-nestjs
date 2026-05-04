@@ -1,18 +1,10 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
 import type { Relation } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { CarMake } from './car-make.entity';
+import { BaseModel } from '../../../core/base-model';
 
 @Entity('carModels')
-export class CarModel {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class CarModel extends BaseModel {
   @Column({ type: 'int' })
   carMakeId: number;
 

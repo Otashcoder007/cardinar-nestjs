@@ -1,10 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
+import { BaseModel } from '../../../core/base-model';
 
 @Entity('phoneNumbers')
-export class PhoneNumber {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class PhoneNumber extends BaseModel {
   @Column({ type: 'varchar', length: 16, unique: true })
   phoneNumber: string;
 }

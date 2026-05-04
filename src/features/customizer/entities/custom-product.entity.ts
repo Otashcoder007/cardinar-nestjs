@@ -1,21 +1,13 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
 import type { Relation } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { Category } from '../../../core/enums';
 import { CarMake } from '../../store/entities/car-make.entity';
 import { CarModel } from '../../store/entities/car-model.entity';
-import { CustomModel } from './custom-model.entity';
+import { CustomModel } from '../custom-model/custom-model.entity';
+import { BaseModel } from '../../../core/base-model';
 
 @Entity('customProducts')
-export class CustomProduct {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class CustomProduct extends BaseModel {
   @Column({ type: 'varchar', length: 64 })
   fullName: string;
 

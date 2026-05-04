@@ -1,10 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
+import { BaseModel } from '../../../core/base-model';
 
 @Entity('socialLinks')
-export class SocialLink {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class SocialLink extends BaseModel {
   @Column({ type: 'varchar', length: 64 })
   title: string;
 

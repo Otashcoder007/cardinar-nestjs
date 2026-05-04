@@ -1,10 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
+import { BaseModel } from '../../../core/base-model';
 
 @Entity('staticInfo')
-export class StaticInfo {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class StaticInfo extends BaseModel {
   @Column({ type: 'varchar', length: 128 })
   address: string;
 

@@ -1,20 +1,12 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
 import type { Relation } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { Category, Parts } from '../../../core/enums';
 import { Color } from '../../store/entities/color.entity';
 import { Material } from './material.entity';
+import { BaseModel } from '../../../core/base-model';
 
 @Entity('parts')
-export class Part {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class Part extends BaseModel {
   @Column({ type: 'enum', enum: Category, enumName: 'category' })
   category: Category;
 

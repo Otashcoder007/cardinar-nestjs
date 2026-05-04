@@ -1,18 +1,10 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
 import type { Relation } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { User } from '../../auth/entities/user.entity';
+import { BaseModel } from '../../../core/base-model';
 
 @Entity('requests')
-export class Request {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class Request extends BaseModel {
   @Column({ type: 'int', nullable: true })
   userId: number | null;
 

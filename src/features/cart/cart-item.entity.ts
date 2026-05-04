@@ -1,19 +1,11 @@
 import type { Relation } from 'typeorm';
 import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
-import { Articul } from './articul.entity';
-import { Order } from './order.entity';
-import { Product } from './product.entity';
-import { BaseModel } from '../../../core/base-model';
+import { Articul } from '../store/entities/articul.entity';
+import { Product } from '../store/entities/product.entity';
+import { BaseModel } from '../../core/base-model';
 
-@Entity('orderItems')
-export class OrderItem extends BaseModel {
-  @Column({ type: 'int' })
-  orderId: number;
-
-  @ManyToOne(() => Order)
-  @JoinColumn({ name: 'orderId' })
-  order: Relation<Order>;
-
+@Entity('cartItems')
+export class CartItem extends BaseModel {
   @Column({ type: 'int' })
   productId: number;
 

@@ -1,19 +1,11 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
 import type { Relation } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { Status } from '../../../core/enums';
 import { Category } from './category.entity';
+import { BaseModel } from '../../../core/base-model';
 
 @Entity('products')
-export class Product {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class Product extends BaseModel {
   @Column({ type: 'int' })
   categoryId: number;
 

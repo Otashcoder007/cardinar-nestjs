@@ -1,11 +1,9 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
 import { BranchType } from '../../../core/enums';
+import { BaseModel } from '../../../core/base-model';
 
 @Entity('branches')
-export class Branch {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class Branch extends BaseModel {
   @Column({ type: 'varchar', length: 128 })
   title: string;
 

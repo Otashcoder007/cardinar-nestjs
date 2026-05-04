@@ -1,20 +1,12 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
 import type { Relation } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { OrderStatus, PaymentMethod } from '../../../core/enums';
 import { User } from '../../auth/entities/user.entity';
 import { Branch } from './branch.entity';
+import { BaseModel } from '../../../core/base-model';
 
 @Entity('orders')
-export class Order {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class Order extends BaseModel {
   @Column({ type: 'int' })
   userId: number;
 

@@ -1,19 +1,11 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
 import type { Relation } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { Color } from './color.entity';
 import { Product } from './product.entity';
+import { BaseModel } from '../../../core/base-model';
 
 @Entity('productColors')
-export class ProductColor {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class ProductColor extends BaseModel {
   @Column({ type: 'int' })
   productId: number;
 
